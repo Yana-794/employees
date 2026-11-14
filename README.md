@@ -5,7 +5,9 @@ Full-stack справочник сотрудников: авторизация, 
 добавление и удаление с подтверждением.
 
 **Backend:** Node.js · TypeScript · Express · better-sqlite3 · Argon2id · cookie-сессии
+
 **Frontend:** React · TypeScript · Vite · React Router · TanStack Query · CSS Modules
+
 **Инфраструктура:** Docker Compose · Nginx
 
 ## Быстрый старт (Docker)
@@ -16,11 +18,12 @@ Full-stack справочник сотрудников: авторизация, 
 docker compose up --build
 ```
 
-- Frontend — http://localhost:8080
-- Backend health — http://localhost:3000/health
+- Frontend - http://localhost:8080
+- Backend health - http://localhost:3000/health
 
 При первом запуске создаются схема SQLite, **5 демо-сотрудников** и справочник
-отделов (HR, Аналитика, Поддержка, Разработка). Пользователей нет — откройте
+отделов. 
+Пользователей нет - откройте
 фронтенд и зарегистрируйтесь.
 
 ### Сброс БД «с нуля»
@@ -87,7 +90,7 @@ cd front && npm install && npm run dev     # http://localhost:5173
 
 ### ChatGPT
 
-- Вёрстка и стили фронтенда: форма , панель списка, шапка , адаптив.
+- Вёрстка и стили фронтенда.
 - Кастомный `select` (триггер + `role="listbox"`, клавиатура).
 - Модалка подтверждения удаления.
 
@@ -97,9 +100,8 @@ cd front && npm install && npm run dev     # http://localhost:5173
 - Backend-функции: `EmployeeRepository` (`findAll`, `findDepartments`, `create`,
   `deleteById`), транзакция «отдел + сотрудник».
 - Миграция отделов в отдельную таблицу `departments`, seed и схема БД.
-- Валидаторы: ФИО - только русские буквы, должность - без цифр.
-- Единая обработка ошибок: `AppError` во всех слоях, `errorHandler`
-  возвращает `{ error: { code, message } }`.
+- Валидаторы.
+- Единая обработка ошибок.
 
 Все сгенерированные фрагменты прочитаны, прогнаны локально и в Docker,
 поправлены под текущий код; финальные решения принимались вручную.
