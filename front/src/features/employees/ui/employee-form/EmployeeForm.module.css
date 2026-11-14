@@ -1,0 +1,443 @@
+.panel {
+  padding: 25px 28px 28px;
+  background: var(--color-card-dark);
+  color: var(--color-card-light);
+}
+
+.panelHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.eyebrow {
+  color: var(--color-brown);
+}
+
+.title {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.plusMark {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(254, 217, 95, 0.14);
+  color: var(--color-yellow);
+  font-size: 25px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr auto;
+  align-items: end;
+  gap: 13px;
+  margin-top: 22px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.fieldLabel {
+  color: inherit;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.input {
+  width: 100%;
+  min-width: 0;
+  height: 45px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 11px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.09);
+  color: white;
+  font-size: 12px;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.input::placeholder {
+  color: #a7a7a7;
+}
+
+.input:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.input:focus {
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 0 3px rgba(254, 217, 95, 0.2);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.select {
+  appearance: none;
+  width: 100%;
+  min-width: 0;
+  height: 45px;
+  padding: 0 40px 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 11px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.09);
+  background-image:
+    linear-gradient(45deg, transparent 50%, #a7a7a7 50%),
+    linear-gradient(135deg, #a7a7a7 50%, transparent 50%);
+  background-position:
+    calc(100% - 17px) center,
+    calc(100% - 12px) center;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 12px;
+  line-height: 43px;
+  cursor: pointer;
+  color-scheme: dark;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.select:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.select:focus {
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 0 3px rgba(254, 217, 95, 0.2);
+}
+
+.select:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.selectPlaceholder {
+  color: #a7a7a7;
+}
+
+@supports (appearance: base-select) {
+  .select {
+    appearance: base-select;
+    display: inline-flex;
+    align-items: center;
+    background-image: none;
+    padding: 0 40px 0 14px;
+  }
+
+  .select::picker-icon {
+    color: #a7a7a7;
+    margin-left: 4px;
+    transition: transform 0.2s ease;
+  }
+
+  .select:open::picker-icon {
+    transform: rotate(180deg);
+  }
+
+  .select::picker(select) {
+    margin-top: 6px;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    background: var(--color-card-dark);
+    box-shadow:
+      0 18px 44px rgba(0, 0, 0, 0.5),
+      0 2px 8px rgba(0, 0, 0, 0.25);
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(254, 217, 95, 0.35) transparent;
+    animation: pickerIn 0.16s ease-out both;
+  }
+
+  .select option {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    margin-bottom: 4px;
+    border-radius: 9px;
+    background: transparent;
+    color: #e8e8e8;
+    font-size: 12.5px;
+    line-height: 1.2;
+    cursor: pointer;
+    transition:
+      background 0.12s ease,
+      color 0.12s ease;
+  }
+
+  .select option:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .select option:hover,
+  .select option:focus,
+  .select option:active {
+    background: rgba(254, 217, 95, 0.14);
+    color: var(--color-yellow);
+  }
+
+  .select option:checked {
+    background: rgba(254, 217, 95, 0.22);
+    color: var(--color-yellow);
+    font-weight: 700;
+  }
+
+  .select option:checked::checkmark {
+    color: var(--color-yellow);
+    margin-right: 6px;
+  }
+
+  @keyframes pickerIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.addButton {
+  min-width: 112px;
+}
+
+.error {
+  margin: 0;
+  color: #ffb8a9;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.errorInline {
+  margin-top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @supports (appearance: base-select) {
+    .select::picker-icon {
+      transition: none;
+    }
+    .select::picker(select) {
+      animation: none;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .addButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .panel {
+    padding: 21px 17px;
+    border-radius: 18px;
+  }
+  .form {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .addButton {
+    margin-top: 2px;
+  }
+}
+
+.selectRoot {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.selectTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  height: 45px;
+  padding: 0 12px 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.09);
+  color: #fff;
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.selectTrigger:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.selectTrigger:focus-visible,
+.selectOpen {
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 0 3px rgba(254, 217, 95, 0.2);
+}
+
+.selectInvalid {
+  border-color: rgba(255, 150, 128, 0.75);
+}
+
+.selectInvalid:focus-visible,
+.selectInvalid.selectOpen {
+  box-shadow: 0 0 0 3px rgba(255, 150, 128, 0.22);
+}
+
+.selectValue {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.selectChevron {
+  flex: none;
+  color: #a7a7a7;
+  transition:
+    transform 0.2s ease,
+    color 0.18s ease;
+}
+
+.selectOpen .selectChevron {
+  color: var(--color-yellow);
+  transform: rotate(180deg);
+}
+
+.selectList {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  max-height: 280px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: var(--color-card-dark);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.25);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(254, 217, 95, 0.35) transparent;
+  animation: selectPop 0.16s ease-out both;
+}
+
+.selectList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.selectList::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(254, 217, 95, 0.3);
+}
+
+.selectOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 11px;
+  color: #e8e8e8;
+  font-size: 12.5px;
+  line-height: 1.25;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.selectOption + .selectOption {
+  margin-top: 2px;
+}
+
+.selectOptionActive {
+  background: rgba(254, 217, 95, 0.12);
+  color: var(--color-yellow);
+}
+
+.selectOptionSelected {
+  background: rgba(254, 217, 95, 0.18);
+  color: var(--color-yellow);
+  font-weight: 700;
+}
+
+.selectOptionSelected.selectOptionActive {
+  background: rgba(254, 217, 95, 0.26);
+}
+
+.selectOptionLabel {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.selectCheck {
+  flex: none;
+  font-size: 12px;
+  line-height: 1;
+}
+
+@keyframes selectPop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selectChevron {
+    transition: none;
+  }
+  .selectList {
+    animation: none;
+  }
+}

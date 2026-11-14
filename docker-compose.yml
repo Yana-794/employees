@@ -1,0 +1,42 @@
+services:
+  back:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    container_name: back
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: 3000
+      DATABASE_PATH: /app/data/employee.sqlite
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+    volumes:
+      - employee-data:/app/data
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks:
+      - backend_network
+      - frontend_network
+
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: employee-list-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - back         
+    restart: unless-stopped
+    networks:
+      - frontend_network
+
+volumes:
+  employee-data:
+    name: employee-list-data
+
+networks:
+  backend_network:
+    driver: bridge
+  frontend_network:
+    driver: bridge

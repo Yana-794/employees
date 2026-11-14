@@ -1,0 +1,16 @@
+.switch {
+  margin: 0;
+  color: #a9a9a9;
+  font-size: 11px;
+  text-align: center;
+}
+
+.switch a {
+  color: var(--color-yellow);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}

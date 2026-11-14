@@ -1,0 +1,99 @@
+.row {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-top: 1px solid rgba(48, 48, 48, 0.075);
+}
+
+.avatar {
+  flex: 0 0 39px;
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(186, 171, 155, 0.27);
+  color: #66594c;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.avatar1 { background: rgba(254, 217, 95, 0.45); color: #78601a; }
+.avatar2 { background: #e2e6e6; color: #566363; }
+.avatar3 { background: #eee2d8; color: #806752; }
+.avatar4 { background: #e9e5d8; color: #74694c; }
+
+.main {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 5px;
+}
+
+.name {
+  overflow: hidden;
+  color: #353535;
+  font-size: 12px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.position {
+  overflow: hidden;
+  color: var(--color-grey);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tag {
+  max-width: 190px;
+  overflow: hidden;
+  border-radius: 7px;
+  padding: 7px 10px;
+  background: rgba(228, 230, 231, 0.62);
+  color: #686868;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.deleteButton {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-left: 4px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: rgba(48, 48, 48, 0.35);
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.deleteButton:hover {
+  color: #a34a3b;
+  background: rgba(163, 74, 59, 0.08);
+  border-color: rgba(163, 74, 59, 0.22);
+}
+
+.deleteButton:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(163, 74, 59, 0.25);
+}
+@media (max-width: 620px) {
+  .row {
+    gap: 10px;
+  }
+  .tag {
+    max-width: 105px;
+    padding: 6px 7px;
+    font-size: 9px;
+  }
+}

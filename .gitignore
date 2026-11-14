@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# builds
+backend/dist/
+frontend/dist/
+
+# environment
+.env
+backend/.env
+
+# SQLite data
+backend/data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# editor / OS
+.DS_Store
+.idea/
+.vscode/

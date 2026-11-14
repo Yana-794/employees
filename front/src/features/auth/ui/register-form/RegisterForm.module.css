@@ -1,0 +1,125 @@
+.form {
+  display: grid;
+  gap: 13px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.fieldLabel {
+  color: #dedede;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.input {
+  width: 100%;
+  min-width: 0;
+  height: 47px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 11px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 12px;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.input::placeholder {
+  color: #8e8e8e;
+}
+
+.input:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.input:focus,
+.input:focus-visible {
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 0 3px rgba(254, 217, 95, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.input[aria-invalid="true"] {
+  border-color: rgba(255, 120, 100, 0.6);
+}
+
+.input[aria-invalid="true"]:focus {
+  border-color: #ff7864;
+  box-shadow: 0 0 0 3px rgba(255, 120, 100, 0.2);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.08) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #fff;
+}
+
+.error {
+  margin: 0;
+  color: #ffb8a9;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.submit {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 11px;
+  padding: 0 18px;
+  background: var(--color-yellow);
+  color: var(--color-card-dark);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(254, 217, 95, 0);
+  transition:
+    transform 0.16s ease,
+    filter 0.16s ease,
+    box-shadow 0.18s ease;
+}
+
+.submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 8px 22px rgba(254, 217, 95, 0.35);
+}
+
+.submit:active:not(:disabled) {
+  transform: translateY(0);
+  filter: brightness(0.98);
+  box-shadow: 0 4px 12px rgba(254, 217, 95, 0.25);
+}
+
+.submit:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(254, 217, 95, 0.35),
+    0 8px 22px rgba(254, 217, 95, 0.35);
+}
+
+.submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  box-shadow: none;
+}
